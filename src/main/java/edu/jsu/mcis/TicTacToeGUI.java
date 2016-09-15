@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class TicTacToeGUI extends JFrame implements ActionListener{
+public class TicTacToeGUI extends JPanel implements ActionListener{
     private JButton[][] buttonGrid;
     private boolean playerTurn;
 	private TicTacToeModel model;
@@ -17,8 +17,6 @@ public class TicTacToeGUI extends JFrame implements ActionListener{
         setLayout(new GridLayout(3, 3));
 		winner = "";
         buttonGrid = new JButton[3][3];
-		label = new JLabel(winner, JLabel.TOP);
-		add(label);
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
 				buttonGrid[i][j] = new JButton();
@@ -38,28 +36,31 @@ public class TicTacToeGUI extends JFrame implements ActionListener{
                 button.setText("O");
             }
             playerTurn = !playerTurn;
-            getWinner();
         }
+		checkForWinner();
     }
-    
-    private void getWinner(){
+	
+	private void checkForWinner(){
 		model.getWinner();
-		String winMessage = model.winMessage;
-		int count = model.playCount;		
-        if(winMessage != ""){
-            winner = winMessage;
-            label.setText(winner);
-        }
-        else{
-            for(int i = 0; i < 3; i++){
-                for(int j = 0; j < 3; j++){
-                    if(!isEmpty(i, j)){
-                        count++;
-                    }
-                }
-            }
-        }
-    }
+		String win;
+		if(model.isGameStillRunning() && model.winMessage == "X"){
+			win = "X";
+		}
+		else if(model.isGameStillRunning() && model.winMessage == "O"){
+			win = "O";
+		}
+		else if (model.isGameStillRunning() && model.winMessage == "TIE"){
+			win = "TIE";
+		}
+		else {
+			win = "";
+		}
+		if(win.length() > 0){
+			Dialog dialog = new Dialog("The winner is " + win);
+			Thread thread = new Thread(dialog);
+			thread.start();
+		}
+	}
 	
     private boolean isEmpty(int row, int col){
         return buttonGrid[row][col].getText().length() == 0;

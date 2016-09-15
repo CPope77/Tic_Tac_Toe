@@ -1,14 +1,30 @@
 ==============================================================================
-20160914 22:14:06.331 - INFO - + START SUITE: Acceptancetest [ ]
+20160914 23:34:12.843 - INFO - + START SUITE: Acceptancetest [ ]
 ==============================================================================
-20160914 22:14:07.003 - INFO - +- START SUITE: Acceptancetest.TicTacToeGUIKeywords [ ]
+20160914 23:34:15.356 - INFO - +- START SUITE: Acceptancetest.TicTacToeGUIKeywords [ ]
 ==============================================================================
-20160914 22:14:07.003 - INFO - +-- START TEST: Win Diagonally as X [ ]
+20160914 23:34:15.387 - INFO - +-- START TEST: Win Diagonally as X [ ]
 ------------------------------------------------------------------------------
-20160914 22:14:07.003 - INFO - +--- START KW: Start New Game [ ]
-20160914 22:14:07.018 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
-20160914 22:14:07.050 - FAIL - RuntimeException
-20160914 22:14:07.050 - DEBUG - java.lang.RuntimeException
+20160914 23:34:15.418 - INFO - +--- START KW: Start New Game [ ]
+20160914 23:34:15.434 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
+20160914 23:34:15.918 - INFO - +---- END KW: SwingLibrary.Start Application (469)
+20160914 23:34:15.918 - INFO - +---- START KW: SwingLibrary.Select Window [ Tic Tac Toe ]
+20160914 23:34:16.293 - DEBUG - Jemmy: Start to wait frame "Frame with name or title 'Tic Tac Toe'" opened
+20160914 23:34:16.309 - DEBUG - Jemmy: Frame "Frame with name or title 'Tic Tac Toe'" has been opened in 0 milliseconds
+    javax.swing.JFrame[frame0,0,0,300x300,layout=java.awt.BorderLayout,title=Tic Tac Toe,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,8,31,284x261,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+20160914 23:34:16.387 - INFO - +---- END KW: SwingLibrary.Select Window (453)
+20160914 23:34:16.403 - INFO - +--- END KW: Start New Game (969)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20160914 23:34:16.403 - INFO - +--- START KW: Mark Location [ 1 | 1 ]
+20160914 23:34:16.418 - INFO - +---- START KW: BuiltIn.Catenate [ SEPARATOR= | Location | ${row} | ${col} ]
+20160914 23:34:16.481 - INFO - ${component} = Location11
+20160914 23:34:16.496 - INFO - +---- END KW: BuiltIn.Catenate (78)
+20160914 23:34:16.496 - INFO - +---- START KW: SwingLibrary.Click On Component [ ${component} ]
+20160914 23:34:16.590 - DEBUG - Jemmy: Waiting for "Location11" subcomponent
+20160914 23:34:16.590 - DEBUG - Jemmy: Start to wait action "Wait for "Location11" subcomponent to be displayed"
+20160914 23:34:26.605 - DEBUG - Jemmy: "Wait for "Location11" subcomponent to be displayed" action has not been produced in 10015 milliseconds
+20160914 23:34:26.762 - FAIL - Wait for "Location11" subcomponent to be displayed
+20160914 23:34:26.777 - DEBUG - java.lang.RuntimeException: 
 	at org.robotframework.javalib.library.AnnotationLibrary.retrieveInnerException(AnnotationLibrary.java:148)
 	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:130)
 	at org.robotframework.swing.SwingLibrary.runKeyword(SwingLibrary.java:112)
@@ -44,6 +60,8 @@
 	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
 	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.invoke(StaticMetaMethodSite.java:46)
 	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.call(StaticMetaMethodSite.java:91)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
 	at org.roboscratch.gradle.RunRobot.run(RunRobot.groovy:184)
 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:75)
@@ -125,33 +143,55 @@
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.reflect.InvocationTargetException
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.launchApplication(ApplicationLaunchingKeywords.java:34)
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.startApplication(ApplicationLaunchingKeywords.java:41)
+Caused by: org.netbeans.jemmy.TimeoutExpiredException: Wait for "Location11" subcomponent to be displayed
+	at org.netbeans.jemmy.Waiter.waitAction(Waiter.java:147)
+	at org.netbeans.jemmy.operators.ContainerOperator.waitSubComponent(ContainerOperator.java:298)
+	at org.netbeans.jemmy.operators.JComponentOperator.<init>(JComponentOperator.java:110)
+	at org.netbeans.jemmy.operators.JComponentOperator.<init>(JComponentOperator.java:122)
+	at org.robotframework.swing.component.ComponentOperator.<init>(ComponentOperator.java:31)
+	at org.robotframework.swing.component.ComponentOperatorFactory.createOperatorByName(ComponentOperatorFactory.java:32)
+	at org.robotframework.swing.component.ComponentOperatorFactory.createOperatorByName(ComponentOperatorFactory.java:24)
+	at org.robotframework.swing.factory.IdentifierParsingOperatorFactory.nameArgument(IdentifierParsingOperatorFactory.java:33)
+	at org.robotframework.swing.arguments.ArgumentParser.parseSwingArgument(ArgumentParser.java:51)
+	at org.robotframework.swing.arguments.ArgumentParser.parseArgument(ArgumentParser.java:35)
+	at org.robotframework.swing.factory.DefaultContextVerifyingOperatorFactory.parseArgument(DefaultContextVerifyingOperatorFactory.java:27)
+	at org.robotframework.swing.factory.IdentifierParsingOperatorFactory.createOperator(IdentifierParsingOperatorFactory.java:25)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.operator(ComponentKeywords.java:226)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.clickOnComponent(ComponentKeywords.java:71)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.clickOnComponent(ComponentKeywords.java:76)
 	at org.robotframework.javalib.reflection.KeywordInvoker.invoke(KeywordInvoker.java:50)
 	at org.robotframework.javalib.beans.annotation.AnnotationKeywordExtractor$1.execute(AnnotationKeywordExtractor.java:62)
+	at org.robotframework.javalib.beans.annotation.AnnotationKeywordExtractor$2.execute(AnnotationKeywordExtractor.java:84)
 	at org.robotframework.javalib.library.KeywordFactoryBasedLibrary.runKeyword(KeywordFactoryBasedLibrary.java:37)
 	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:128)
-	... 287 more
-Caused by: java.lang.IllegalArgumentException: horizontalAlignment
-	at javax.swing.JLabel.checkHorizontalKey(JLabel.java:608)
-	at javax.swing.JLabel.setHorizontalAlignment(JLabel.java:766)
-	at javax.swing.JLabel.<init>(JLabel.java:163)
-	at javax.swing.JLabel.<init>(JLabel.java:183)
-	at edu.jsu.mcis.TicTacToeGUI.<init>(TicTacToeGUI.java:20)
-	at edu.jsu.mcis.TicTacToe.main(TicTacToe.java:7)
-	... 301 more
-20160914 22:14:07.065 - INFO - +---- END KW: SwingLibrary.Start Application (47)
-20160914 22:14:07.065 - INFO - +--- END KW: Start New Game (62)
+	... 289 more
+20160914 23:34:26.793 - INFO - +---- END KW: SwingLibrary.Click On Component (10281)
+20160914 23:34:26.793 - INFO - +--- END KW: Mark Location (10390)
 ------------------------------------------------------------------------------
-20160914 22:14:07.065 - INFO - +-- END TEST: Win Diagonally as X (62)
+20160914 23:34:26.840 - INFO - +-- END TEST: Win Diagonally as X (11422)
 ------------------------------------------------------------------------------
-20160914 22:14:07.065 - INFO - +-- START TEST: Win Horizontally as O [ ]
+20160914 23:34:26.855 - INFO - +-- START TEST: Win Horizontally as O [ ]
 ------------------------------------------------------------------------------
-20160914 22:14:07.081 - INFO - +--- START KW: Start New Game [ ]
-20160914 22:14:07.081 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
-20160914 22:14:07.128 - FAIL - RuntimeException
-20160914 22:14:07.128 - DEBUG - java.lang.RuntimeException
+20160914 23:34:26.871 - INFO - +--- START KW: Start New Game [ ]
+20160914 23:34:26.871 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
+20160914 23:34:26.949 - INFO - +---- END KW: SwingLibrary.Start Application (63)
+20160914 23:34:26.949 - INFO - +---- START KW: SwingLibrary.Select Window [ Tic Tac Toe ]
+20160914 23:34:26.949 - DEBUG - Jemmy: Start to wait frame "Frame with name or title 'Tic Tac Toe'" opened
+20160914 23:34:27.105 - DEBUG - Jemmy: Frame "Frame with name or title 'Tic Tac Toe'" has been opened in 0 milliseconds
+    javax.swing.JFrame[frame0,0,0,300x300,invalid,layout=java.awt.BorderLayout,title=Tic Tac Toe,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,8,31,284x261,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+20160914 23:34:27.184 - INFO - +---- END KW: SwingLibrary.Select Window (235)
+20160914 23:34:27.199 - INFO - +--- END KW: Start New Game (328)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20160914 23:34:27.215 - INFO - +--- START KW: Mark Location [ 1 | 1 ]
+20160914 23:34:27.246 - INFO - +---- START KW: BuiltIn.Catenate [ SEPARATOR= | Location | ${row} | ${col} ]
+20160914 23:34:27.355 - INFO - ${component} = Location11
+20160914 23:34:27.355 - INFO - +---- END KW: BuiltIn.Catenate (109)
+20160914 23:34:27.355 - INFO - +---- START KW: SwingLibrary.Click On Component [ ${component} ]
+20160914 23:34:27.355 - DEBUG - Jemmy: Waiting for "Location11" subcomponent
+20160914 23:34:27.355 - DEBUG - Jemmy: Start to wait action "Wait for "Location11" subcomponent to be displayed"
+20160914 23:34:37.368 - DEBUG - Jemmy: "Wait for "Location11" subcomponent to be displayed" action has not been produced in 10013 milliseconds
+20160914 23:34:37.431 - FAIL - Wait for "Location11" subcomponent to be displayed
+20160914 23:34:37.431 - DEBUG - java.lang.RuntimeException: 
 	at org.robotframework.javalib.library.AnnotationLibrary.retrieveInnerException(AnnotationLibrary.java:148)
 	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:130)
 	at org.robotframework.swing.SwingLibrary.runKeyword(SwingLibrary.java:112)
@@ -187,6 +227,8 @@ Caused by: java.lang.IllegalArgumentException: horizontalAlignment
 	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
 	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.invoke(StaticMetaMethodSite.java:46)
 	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.call(StaticMetaMethodSite.java:91)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)
 	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
 	at org.roboscratch.gradle.RunRobot.run(RunRobot.groovy:184)
 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:75)
@@ -268,440 +310,47 @@ Caused by: java.lang.IllegalArgumentException: horizontalAlignment
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.reflect.InvocationTargetException
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.launchApplication(ApplicationLaunchingKeywords.java:34)
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.startApplication(ApplicationLaunchingKeywords.java:41)
+Caused by: org.netbeans.jemmy.TimeoutExpiredException: Wait for "Location11" subcomponent to be displayed
+	at org.netbeans.jemmy.Waiter.waitAction(Waiter.java:147)
+	at org.netbeans.jemmy.operators.ContainerOperator.waitSubComponent(ContainerOperator.java:298)
+	at org.netbeans.jemmy.operators.JComponentOperator.<init>(JComponentOperator.java:110)
+	at org.netbeans.jemmy.operators.JComponentOperator.<init>(JComponentOperator.java:122)
+	at org.robotframework.swing.component.ComponentOperator.<init>(ComponentOperator.java:31)
+	at org.robotframework.swing.component.ComponentOperatorFactory.createOperatorByName(ComponentOperatorFactory.java:32)
+	at org.robotframework.swing.component.ComponentOperatorFactory.createOperatorByName(ComponentOperatorFactory.java:24)
+	at org.robotframework.swing.factory.IdentifierParsingOperatorFactory.nameArgument(IdentifierParsingOperatorFactory.java:33)
+	at org.robotframework.swing.arguments.ArgumentParser.parseSwingArgument(ArgumentParser.java:51)
+	at org.robotframework.swing.arguments.ArgumentParser.parseArgument(ArgumentParser.java:35)
+	at org.robotframework.swing.factory.DefaultContextVerifyingOperatorFactory.parseArgument(DefaultContextVerifyingOperatorFactory.java:27)
+	at org.robotframework.swing.factory.IdentifierParsingOperatorFactory.createOperator(IdentifierParsingOperatorFactory.java:25)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.operator(ComponentKeywords.java:226)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.clickOnComponent(ComponentKeywords.java:71)
+	at org.robotframework.swing.keyword.component.ComponentKeywords.clickOnComponent(ComponentKeywords.java:76)
 	at org.robotframework.javalib.reflection.KeywordInvoker.invoke(KeywordInvoker.java:50)
 	at org.robotframework.javalib.beans.annotation.AnnotationKeywordExtractor$1.execute(AnnotationKeywordExtractor.java:62)
+	at org.robotframework.javalib.beans.annotation.AnnotationKeywordExtractor$2.execute(AnnotationKeywordExtractor.java:84)
 	at org.robotframework.javalib.library.KeywordFactoryBasedLibrary.runKeyword(KeywordFactoryBasedLibrary.java:37)
 	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:128)
-	... 287 more
-Caused by: java.lang.IllegalArgumentException: horizontalAlignment
-	at javax.swing.JLabel.checkHorizontalKey(JLabel.java:608)
-	at javax.swing.JLabel.setHorizontalAlignment(JLabel.java:766)
-	at javax.swing.JLabel.<init>(JLabel.java:163)
-	at javax.swing.JLabel.<init>(JLabel.java:183)
-	at edu.jsu.mcis.TicTacToeGUI.<init>(TicTacToeGUI.java:20)
-	at edu.jsu.mcis.TicTacToe.main(TicTacToe.java:7)
-	... 301 more
-20160914 22:14:07.128 - INFO - +---- END KW: SwingLibrary.Start Application (47)
-20160914 22:14:07.143 - INFO - +--- END KW: Start New Game (62)
+	... 289 more
+20160914 23:34:37.447 - INFO - +---- END KW: SwingLibrary.Click On Component (10076)
+20160914 23:34:37.447 - INFO - +--- END KW: Mark Location (10232)
 ------------------------------------------------------------------------------
-20160914 22:14:07.143 - INFO - +-- END TEST: Win Horizontally as O (78)
+20160914 23:34:37.462 - INFO - +-- END TEST: Win Horizontally as O (10607)
 ------------------------------------------------------------------------------
-20160914 22:14:07.159 - INFO - +-- START TEST: Force a Tie [ ]
+20160914 23:34:37.478 - INFO - +-- START TEST: Force a Tie [ ]
 ------------------------------------------------------------------------------
-20160914 22:14:07.159 - INFO - +--- START KW: Start New Game [ ]
-20160914 22:14:07.159 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
-20160914 22:14:07.206 - FAIL - RuntimeException
-20160914 22:14:07.206 - DEBUG - java.lang.RuntimeException
-	at org.robotframework.javalib.library.AnnotationLibrary.retrieveInnerException(AnnotationLibrary.java:148)
-	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:130)
-	at org.robotframework.swing.SwingLibrary.runKeyword(SwingLibrary.java:112)
-	at robot.model.testcase$py.visit$7(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testcase.py:73)
-	at robot.model.testcase$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testcase.py)
-	at robot.model.itemlist$py.visit$10(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/itemlist.py:68)
-	at robot.model.itemlist$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/itemlist.py)
-	at robot.model.visitor$py.visit_suite$2(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/visitor.py:87)
-	at robot.model.visitor$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/visitor.py)
-	at robot.model.testsuite$py.visit$19(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testsuite.py:160)
-	at robot.model.testsuite$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testsuite.py)
-	at robot.model.itemlist$py.visit$10(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/itemlist.py:68)
-	at robot.model.itemlist$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/itemlist.py)
-	at robot.model.visitor$py.visit_suite$2(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/visitor.py:87)
-	at robot.model.visitor$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/visitor.py)
-	at robot.model.testsuite$py.visit$19(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testsuite.py:160)
-	at robot.model.testsuite$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/model/testsuite.py)
-	at robot.run$py.main$3(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/run.py:441)
-	at robot.run$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/run.py)
-	at robot.utils.application$py._execute$10(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/utils/application.py:91)
-	at robot.utils.application$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/utils/application.py)
-	at robot.utils.application$py.execute_cli$5(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/utils/application.py:46)
-	at robot.utils.application$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/utils/application.py)
-	at robot.run$py.run_cli$7(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/run.py:466)
-	at robot.run$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/run.py)
-	at robot.jarrunner$py._run$3(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/jarrunner.py:63)
-	at robot.jarrunner$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/jarrunner.py)
-	at robot.jarrunner$py.run$2(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/jarrunner.py:56)
-	at robot.jarrunner$py.call_function(/Users/jmalinen/Documents/workspace/robotframework/build/Lib/robot/jarrunner.py)
-	at org.robotframework.RobotRunner.run(RobotRunner.java:73)
-	at org.robotframework.RobotFramework.run(RobotFramework.java:60)
-	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)
-	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.invoke(StaticMetaMethodSite.java:46)
-	at org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.call(StaticMetaMethodSite.java:91)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
-	at org.roboscratch.gradle.RunRobot.run(RunRobot.groovy:184)
-	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:75)
-	at org.gradle.api.internal.project.taskfactory.DefaultTaskClassInfoStore$StandardTaskAction.doExecute(DefaultTaskClassInfoStore.java:133)
-	at org.gradle.api.internal.project.taskfactory.DefaultTaskClassInfoStore$StandardTaskAction.execute(DefaultTaskClassInfoStore.java:126)
-	at org.gradle.api.internal.project.taskfactory.DefaultTaskClassInfoStore$StandardTaskAction.execute(DefaultTaskClassInfoStore.java:115)
-	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:623)
-	at org.gradle.api.internal.AbstractTask$TaskActionWrapper.execute(AbstractTask.java:606)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeAction(ExecuteActionsTaskExecuter.java:80)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeActions(ExecuteActionsTaskExecuter.java:61)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:46)
-	at org.gradle.api.internal.tasks.execution.PostExecutionAnalysisTaskExecuter.execute(PostExecutionAnalysisTaskExecuter.java:35)
-	at org.gradle.api.internal.tasks.execution.SkipUpToDateTaskExecuter.execute(SkipUpToDateTaskExecuter.java:64)
-	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:58)
-	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:52)
-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:52)
-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:53)
-	at org.gradle.api.internal.tasks.execution.ExecuteAtMostOnceTaskExecuter.execute(ExecuteAtMostOnceTaskExecuter.java:43)
-	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:203)
-	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter$EventFiringTaskWorker.execute(DefaultTaskGraphExecuter.java:185)
-	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.processTask(AbstractTaskPlanExecutor.java:74)
-	at org.gradle.execution.taskgraph.AbstractTaskPlanExecutor$TaskExecutorWorker.run(AbstractTaskPlanExecutor.java:55)
-	at org.gradle.execution.taskgraph.DefaultTaskPlanExecutor.process(DefaultTaskPlanExecutor.java:32)
-	at org.gradle.execution.taskgraph.DefaultTaskGraphExecuter.execute(DefaultTaskGraphExecuter.java:110)
-	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:37)
-	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:37)
-	at org.gradle.execution.DefaultBuildExecuter.access$000(DefaultBuildExecuter.java:23)
-	at org.gradle.execution.DefaultBuildExecuter$1.proceed(DefaultBuildExecuter.java:43)
-	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:32)
-	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:37)
-	at org.gradle.execution.DefaultBuildExecuter.execute(DefaultBuildExecuter.java:30)
-	at org.gradle.initialization.DefaultGradleLauncher$4.run(DefaultGradleLauncher.java:153)
-	at org.gradle.internal.Factories$1.create(Factories.java:22)
-	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
-	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:53)
-	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:150)
-	at org.gradle.initialization.DefaultGradleLauncher.access$200(DefaultGradleLauncher.java:32)
-	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:98)
-	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:92)
-	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
-	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:63)
-	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:92)
-	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:83)
-	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:94)
-	at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:28)
-	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
-	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:43)
-	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:28)
-	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:82)
-	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:49)
-	at org.gradle.launcher.daemon.server.exec.ExecuteBuild.doBuild(ExecuteBuild.java:59)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.WatchForDisconnection.execute(WatchForDisconnection.java:49)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.ResetDeprecationLogger.execute(ResetDeprecationLogger.java:26)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.RequestStopIfSingleUsedDaemon.execute(RequestStopIfSingleUsedDaemon.java:34)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:74)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput$2.call(ForwardClientInput.java:72)
-	at org.gradle.util.Swapper.swap(Swapper.java:38)
-	at org.gradle.launcher.daemon.server.exec.ForwardClientInput.execute(ForwardClientInput.java:72)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:55)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:60)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:72)
-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:36)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.HintGCAfterBuild.execute(HintGCAfterBuild.java:44)
-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:120)
-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:50)
-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator$1.run(DaemonStateCoordinator.java:240)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
-	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.reflect.InvocationTargetException
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.launchApplication(ApplicationLaunchingKeywords.java:34)
-	at org.robotframework.swing.keyword.launch.ApplicationLaunchingKeywords.startApplication(ApplicationLaunchingKeywords.java:41)
-	at org.robotframework.javalib.reflection.KeywordInvoker.invoke(KeywordInvoker.java:50)
-	at org.robotframework.javalib.beans.annotation.AnnotationKeywordExtractor$1.execute(AnnotationKeywordExtractor.java:62)
-	at org.robotframework.javalib.library.KeywordFactoryBasedLibrary.runKeyword(KeywordFactoryBasedLibrary.java:37)
-	at org.robotframework.javalib.library.AnnotationLibrary.runKeyword(AnnotationLibrary.java:128)
-	... 287 more
-Caused by: java.lang.IllegalArgumentException: horizontalAlignment
-	at javax.swing.JLabel.checkHorizontalKey(JLabel.java:608)
-	at javax.swing.JLabel.setHorizontalAlignment(JLabel.java:766)
-	at javax.swing.JLabel.<init>(JLabel.java:163)
-	at javax.swing.JLabel.<init>(JLabel.java:183)
-	at edu.jsu.mcis.TicTacToeGUI.<init>(TicTacToeGUI.java:20)
-	at edu.jsu.mcis.TicTacToe.main(TicTacToe.java:7)
-	... 301 more
-20160914 22:14:07.222 - INFO - +---- END KW: SwingLibrary.Start Application (47)
-20160914 22:14:07.222 - INFO - +--- END KW: Start New Game (63)
-------------------------------------------------------------------------------
-20160914 22:14:07.237 - INFO - +-- END TEST: Force a Tie (79)
-------------------------------------------------------------------------------
-20160914 22:14:07.253 - INFO - +- END SUITE: Acceptancetest.TicTacToeGUIKeywords (906)
-==============================================================================
-20160914 22:14:07.315 - INFO - +- START SUITE: Acceptancetest.TicTacToeTests [ ]
-==============================================================================
-20160914 22:14:07.315 - INFO - +-- START TEST: Win Diagonally as X [ ]
-------------------------------------------------------------------------------
-20160914 22:14:07.315 - INFO - +--- START KW: TicTacToeKeywords.Start New Game [ ]
-20160914 22:14:07.331 - INFO - +--- END KW: TicTacToeKeywords.Start New Game (16)
+20160914 23:34:37.494 - INFO - +--- START KW: Start New Game [ ]
+20160914 23:34:37.494 - INFO - +---- START KW: SwingLibrary.Start Application [ edu.jsu.mcis.TicTacToe ]
+20160914 23:34:37.541 - INFO - +---- END KW: SwingLibrary.Start Application (31)
+20160914 23:34:37.541 - INFO - +---- START KW: SwingLibrary.Select Window [ Tic Tac Toe ]
+20160914 23:34:37.556 - DEBUG - Jemmy: Start to wait frame "Frame with name or title 'Tic Tac Toe'" opened
+20160914 23:34:37.572 - DEBUG - Jemmy: Frame "Frame with name or title 'Tic Tac Toe'" has been opened in 0 milliseconds
+    javax.swing.JFrame[frame0,291,0,300x300,invalid,layout=java.awt.BorderLayout,title=Tic Tac Toe,resizable,normal,defaultCloseOperation=EXIT_ON_CLOSE,rootPane=javax.swing.JRootPane[,8,31,284x261,layout=javax.swing.JRootPane$RootLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=16777673,maximumSize=,minimumSize=,preferredSize=],rootPaneCheckingEnabled=true]
+20160914 23:34:37.603 - INFO - +---- END KW: SwingLibrary.Select Window (46)
+20160914 23:34:37.603 - INFO - +--- END KW: Start New Game (109)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.331 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 1 | 1 ]
-20160914 22:14:07.331 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.331 - INFO - +--- START KW: Check Location [ 1 | 1 | X ]
-20160914 22:14:07.347 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.347 - INFO - ${m} = X
-20160914 22:14:07.347 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:07.347 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.362 - INFO - +---- END KW: BuiltIn.Should Be Equal (15)
-20160914 22:14:07.362 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.362 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 1 ]
-20160914 22:14:07.378 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.378 - INFO - +--- START KW: Check Location [ 0 | 1 | O ]
-20160914 22:14:07.378 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.378 - INFO - ${m} = O
-20160914 22:14:07.393 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:07.393 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.393 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:07.393 - INFO - +--- END KW: Check Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.393 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 0 ]
-20160914 22:14:07.409 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.409 - INFO - +--- START KW: Check Location [ 0 | 0 | X ]
-20160914 22:14:07.409 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.425 - INFO - ${m} = X
-20160914 22:14:07.425 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (16)
-20160914 22:14:07.425 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.456 - INFO - +---- END KW: BuiltIn.Should Be Equal (31)
-20160914 22:14:07.472 - INFO - +--- END KW: Check Location (63)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.472 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 2 ]
-20160914 22:14:07.472 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.487 - INFO - +--- START KW: Check Location [ 0 | 2 | O ]
-20160914 22:14:07.487 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.503 - INFO - ${m} = O
-20160914 22:14:07.503 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (16)
-20160914 22:14:07.503 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.518 - INFO - +---- END KW: BuiltIn.Should Be Equal (15)
-20160914 22:14:07.518 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.518 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 2 ]
-20160914 22:14:07.550 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (32)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.550 - INFO - +--- START KW: Check Location [ 2 | 2 | X ]
-20160914 22:14:07.550 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.565 - INFO - ${m} = X
-20160914 22:14:07.565 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:07.565 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.581 - INFO - +---- END KW: BuiltIn.Should Be Equal (16)
-20160914 22:14:07.581 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.581 - INFO - +--- START KW: Winner Should Be [ X ]
-20160914 22:14:07.581 - INFO - +---- START KW: TicTacToeKeywords.Get Winner [ ]
-20160914 22:14:07.597 - INFO - ${m} = X
-20160914 22:14:07.597 - INFO - +---- END KW: TicTacToeKeywords.Get Winner (16)
-20160914 22:14:07.597 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.612 - INFO - +---- END KW: BuiltIn.Should Be Equal (15)
-20160914 22:14:07.612 - INFO - +--- END KW: Winner Should Be (31)
-------------------------------------------------------------------------------
-20160914 22:14:07.612 - INFO - +-- END TEST: Win Diagonally as X (297)
-------------------------------------------------------------------------------
-20160914 22:14:07.612 - INFO - +-- START TEST: Win Horizontally as O [ ]
-------------------------------------------------------------------------------
-20160914 22:14:07.628 - INFO - +--- START KW: TicTacToeKeywords.Start New Game [ ]
-20160914 22:14:07.643 - INFO - +--- END KW: TicTacToeKeywords.Start New Game (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.643 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 1 | 1 ]
-20160914 22:14:07.643 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.643 - INFO - +--- START KW: Check Location [ 1 | 1 | X ]
-20160914 22:14:07.659 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.659 - INFO - ${m} = X
-20160914 22:14:07.659 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:07.659 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.675 - INFO - +---- END KW: BuiltIn.Should Be Equal (16)
-20160914 22:14:07.675 - INFO - +--- END KW: Check Location (32)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.675 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 0 ]
-20160914 22:14:07.690 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.690 - INFO - +--- START KW: Check Location [ 2 | 0 | O ]
-20160914 22:14:07.690 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.706 - INFO - ${m} = O
-20160914 22:14:07.706 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (16)
-20160914 22:14:07.706 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.722 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:07.722 - INFO - +--- END KW: Check Location (32)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.722 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 0 ]
-20160914 22:14:07.753 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.753 - INFO - +--- START KW: Check Location [ 0 | 0 | X ]
-20160914 22:14:07.768 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.768 - INFO - ${m} = X
-20160914 22:14:07.784 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (16)
-20160914 22:14:07.784 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.800 - INFO - +---- END KW: BuiltIn.Should Be Equal (16)
-20160914 22:14:07.800 - INFO - +--- END KW: Check Location (47)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.800 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 2 ]
-20160914 22:14:07.800 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.815 - INFO - +--- START KW: Check Location [ 2 | 2 | O ]
-20160914 22:14:07.847 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.893 - INFO - ${m} = O
-20160914 22:14:07.893 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (46)
-20160914 22:14:07.909 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.909 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:07.909 - INFO - +--- END KW: Check Location (94)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.909 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 2 ]
-20160914 22:14:07.925 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.925 - INFO - +--- START KW: Check Location [ 0 | 2 | X ]
-20160914 22:14:07.940 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.940 - INFO - ${m} = X
-20160914 22:14:07.940 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:07.956 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.956 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:07.956 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.956 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 1 ]
-20160914 22:14:07.972 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:07.972 - INFO - +--- START KW: Check Location [ 2 | 1 | O ]
-20160914 22:14:07.972 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:07.987 - INFO - ${m} = O
-20160914 22:14:07.987 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:07.987 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:07.987 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:07.987 - INFO - +--- END KW: Check Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.003 - INFO - +--- START KW: Winner Should Be [ O ]
-20160914 22:14:08.003 - INFO - +---- START KW: TicTacToeKeywords.Get Winner [ ]
-20160914 22:14:08.003 - INFO - ${m} = O
-20160914 22:14:08.018 - INFO - +---- END KW: TicTacToeKeywords.Get Winner (15)
-20160914 22:14:08.018 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.018 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.018 - INFO - +--- END KW: Winner Should Be (15)
-------------------------------------------------------------------------------
-20160914 22:14:08.034 - INFO - +-- END TEST: Win Horizontally as O (406)
-------------------------------------------------------------------------------
-20160914 22:14:08.034 - INFO - +-- START TEST: Force a Tie [ ]
-------------------------------------------------------------------------------
-20160914 22:14:08.034 - INFO - +--- START KW: TicTacToeKeywords.Start New Game [ ]
-20160914 22:14:08.050 - INFO - +--- END KW: TicTacToeKeywords.Start New Game (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.050 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 1 | 1 ]
-20160914 22:14:08.050 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.050 - INFO - +--- START KW: Check Location [ 1 | 1 | X ]
-20160914 22:14:08.065 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.065 - INFO - ${m} = X
-20160914 22:14:08.065 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:08.081 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.097 - INFO - +---- END KW: BuiltIn.Should Be Equal (16)
-20160914 22:14:08.097 - INFO - +--- END KW: Check Location (47)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.097 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 0 ]
-20160914 22:14:08.112 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.112 - INFO - +--- START KW: Check Location [ 0 | 0 | O ]
-20160914 22:14:08.128 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.143 - INFO - ${m} = O
-20160914 22:14:08.143 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:08.143 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.143 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.143 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.159 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 0 ]
-20160914 22:14:08.159 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.159 - INFO - +--- START KW: Check Location [ 2 | 0 | X ]
-20160914 22:14:08.175 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.190 - INFO - ${m} = X
-20160914 22:14:08.190 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:08.190 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.222 - INFO - +---- END KW: BuiltIn.Should Be Equal (32)
-20160914 22:14:08.222 - INFO - +--- END KW: Check Location (63)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.222 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 2 ]
-20160914 22:14:08.237 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.237 - INFO - +--- START KW: Check Location [ 0 | 2 | O ]
-20160914 22:14:08.253 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.253 - INFO - ${m} = O
-20160914 22:14:08.253 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:08.253 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.268 - INFO - +---- END KW: BuiltIn.Should Be Equal (15)
-20160914 22:14:08.268 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.268 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 0 | 1 ]
-20160914 22:14:08.268 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.284 - INFO - +--- START KW: Check Location [ 0 | 1 | X ]
-20160914 22:14:08.284 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.284 - INFO - ${m} = X
-20160914 22:14:08.300 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:08.300 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.300 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.300 - INFO - +--- END KW: Check Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.300 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 1 ]
-20160914 22:14:08.315 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.315 - INFO - +--- START KW: Check Location [ 2 | 1 | O ]
-20160914 22:14:08.331 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.347 - INFO - ${m} = O
-20160914 22:14:08.347 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (16)
-20160914 22:14:08.347 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.347 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.378 - INFO - +--- END KW: Check Location (63)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.378 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 1 | 2 ]
-20160914 22:14:08.378 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.378 - INFO - +--- START KW: Check Location [ 1 | 2 | X ]
-20160914 22:14:08.393 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.393 - INFO - ${m} = X
-20160914 22:14:08.393 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (0)
-20160914 22:14:08.393 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.409 - INFO - +---- END KW: BuiltIn.Should Be Equal (16)
-20160914 22:14:08.409 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.409 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 1 | 0 ]
-20160914 22:14:08.425 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.425 - INFO - +--- START KW: Check Location [ 1 | 0 | O ]
-20160914 22:14:08.425 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.440 - INFO - ${m} = O
-20160914 22:14:08.440 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:08.440 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.440 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.456 - INFO - +--- END KW: Check Location (31)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.456 - INFO - +--- START KW: TicTacToeKeywords.Mark Location [ 2 | 2 ]
-20160914 22:14:08.456 - INFO - +--- END KW: TicTacToeKeywords.Mark Location (0)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.472 - INFO - +--- START KW: Check Location [ 2 | 2 | X ]
-20160914 22:14:08.472 - INFO - +---- START KW: TicTacToeKeywords.Get Mark [ ${row} | ${col} ]
-20160914 22:14:08.487 - INFO - ${m} = X
-20160914 22:14:08.487 - INFO - +---- END KW: TicTacToeKeywords.Get Mark (15)
-20160914 22:14:08.487 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.487 - INFO - +---- END KW: BuiltIn.Should Be Equal (0)
-20160914 22:14:08.503 - INFO - +--- END KW: Check Location (15)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-20160914 22:14:08.503 - INFO - +--- START KW: Winner Should Be [ TIE ]
-20160914 22:14:08.503 - INFO - +---- START KW: TicTacToeKeywords.Get Winner [ ]
-20160914 22:14:08.503 - INFO - ${m} = TIE
-20160914 22:14:08.503 - INFO - +---- END KW: TicTacToeKeywords.Get Winner (0)
-20160914 22:14:08.518 - INFO - +---- START KW: BuiltIn.Should Be Equal [ ${m} | ${mark} ]
-20160914 22:14:08.518 - INFO - +---- END KW: BuiltIn.Should Be Equal (15)
-20160914 22:14:08.518 - INFO - +--- END KW: Winner Should Be (15)
-------------------------------------------------------------------------------
-20160914 22:14:08.534 - INFO - +-- END TEST: Force a Tie (500)
-------------------------------------------------------------------------------
-20160914 22:14:08.550 - INFO - +- END SUITE: Acceptancetest.TicTacToeTests (1281)
-==============================================================================
-20160914 22:14:08.628 - INFO - + END SUITE: Acceptancetest (2656)
-==============================================================================
+20160914 23:34:37.619 - INFO - +--- START KW: Mark Location [ 1 | 1 ]
+20160914 23:34:37.634 - INFO - +---- START KW: BuiltIn.Catenate [ SEPARATOR= | Location | ${row} | ${col} ]
+20160914 23:34:37.650 - INFO - ${component} = Location11
+20160914 23:34:37.650 - INFO - +---- END KW: BuiltIn.Catenate (16)
+20160914 23:34:37.666 - INFO - +---- START KW: SwingLibrary.Click On Component [ ${component} ]
